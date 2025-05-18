@@ -1,1 +1,3 @@
 Since the maze file does not specify the Triwizard Cup position, we randomly generate it at the beginning of each episode in a non-wall cell. I also have made sure that the position of cup that Harry is chasing is different from Preacher's(death-eater) position and Harry's position itself.
+# Description of @createenviroment
+Wall position .txt files are loaded followed by initialisation of return rewards and length of actions.With the help of get_randomposition() random positions for Harry,the death_eater(from now on I'll tell this as preacher) and the cup are generated within reset().It is made sure that their positions don't coinside with the positions of walls.
