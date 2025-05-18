@@ -1,1 +1,1 @@
-
+Since the maze file does not specify the Triwizard Cup position, we randomly generate it at the beginning of each episode in a non-wall cell. I also have made sure that the position of cup that Harry is chasing is different from Preacher's(death-eater) position and Harry's position itself.
