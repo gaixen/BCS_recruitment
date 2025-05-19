@@ -91,6 +91,8 @@ Each was trained on:
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
+The datasets used here can be downloaded from here:
+https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 
 
