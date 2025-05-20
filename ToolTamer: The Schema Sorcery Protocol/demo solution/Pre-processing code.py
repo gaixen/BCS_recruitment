@@ -46,12 +46,13 @@ def preprocess_custom_chat(entry):
             if fn_json:
                 sample["output"] = fn_json
             else:
-                continue  # skip malformed tool calls
+                continue  #skip malfunctioning tool calls
         else:
             sample["output"] = assistant
         samples.append(sample)
     return samples
 #if __name__ == "__main__":
+#to avoid the hugeness of the tool invocation.json file a smaller sample is used here
 with open("/content/sample01.json", "r") as f:
     for line_num, line in enumerate(f): # Added enumerate to get line number
         try:
