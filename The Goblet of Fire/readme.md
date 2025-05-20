@@ -1,3 +1,5 @@
+``Get the text files from The Goblet of Fire/demo_maze folder``<Br/>
+``The cup is not considered as an obstacle while applying BFS``
 # Setting up the maze as a rectangualr grid
 within the maze()function the given .txt files are plotted as rectangular grids with X as walls and * as the destination. 
 Since the maze file does not specify the Triwizard Cup position, we randomly generate it at the beginning of each episode in a non-wall cell within the function reset(). I also have made sure that the position of cup that Harry is chasing is different from Preacher's(death-eater) position and Harry's position itself.
@@ -12,4 +14,4 @@ In case Harry get the cup 100 points are credited.I n case the preacher finds Ha
 Here the preacher is eager to hunt Harry before it reaches the cup. For this it is most likly to use Breadth First Search Algorithm. Here two lists are initialised . One is Visited that contains all the nodes that has already been visited and another is the queue which stores the nodes yet to visit.They are both appended after each movement.
 ### consideration
 Only the relative positions of cup and preacher wrt to Harry are taken here.
-## Get the text files from The Goblet of Fire/demo_maze folder
+
