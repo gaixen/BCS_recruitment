@@ -1,5 +1,49 @@
 ``Get the text files from The Goblet of Fire/demo_maze folder``<Br/>
 ``The cup is not considered as an obstacle while applying BFS``
+# The Goblet of Fire: Triwizard Tournament Q-Learning Simulation 
+This repository implements a Reinforcement Learning solution for the Hogwarts Triwizard Tournament challenge using Q-learning. The environment is visualized using Pygame, and the agent (Harry) learns to reach the Triwizard Cup while avoiding Death Eaters on a maze-like grid.
+## Problem Statement
+- A 15x10 maze with walls, a Triwizard Cup, Harry, and a preacher.
+- Harry and the preacher can move in 4 directions unless blocked.
+- The preacher uses BFS to chase Harry.
+- Harry learns to reach the cup using Q-learning.
+- The challenge ends when Harry reaches the cup or gets caught.
+## Features
+- Q-learning agent with tunable hyperparameters
+- Pygame-based visual rendering
+- BFS pathfinding for Death Eater
+- Maze loaded from text file (`V1.txt`)
+- Episode-based reward tracking and plots
+## Q-Learning Details
+- **State Space**: Tuple of Harry’s and Cup's positions
+- **Action Space**: [Up, Down, Left, Right] → `[0, 1, 2, 3]`
+- **Reward Function**:
+  - `+100` → Harry reaches the cup
+  - `-100` → Caught by Death Eater
+  - `-1` → Per move penalty to encourage faster solutions
+
+### Hyperparameters
+| Parameter        | Value       |
+|------------------|-------------|
+| Learning Rate    | 0.01        |
+| Discount Factor  | 0.95        |
+| Epsilon Start    | 1.0         |
+| Epsilon Min      | 0.01        |
+| Epsilon Decay    | 0.995       |
+| Episodes         | 100,000     |
+
+## Evaluation
+- *Metric*: Number of consecutive episodes where Harry wins (goal: 10 in a row)
+- *Tracked*:
+  - Episode rewards
+  - Rolling success rate
+  - Q-table values 
+## Running Instructions
+
+1. Install dependencies:
+   ```bash
+   pip install pygame gymnasium numpy
+# Code and Enviroment Description
 # Setting up the maze as a rectangualr grid
 within the maze()function the given .txt files are plotted as rectangular grids with X as walls and * as the destination. 
 Since the maze file does not specify the Triwizard Cup position, we randomly generate it at the beginning of each episode in a non-wall cell within the function reset(). I also have made sure that the position of cup that Harry is chasing is different from Preacher's(death-eater) position and Harry's position itself.
@@ -13,5 +57,5 @@ In case Harry get the cup 100 points are credited.I n case the preacher finds Ha
 ## Using Breadth First Search Algorithm 
 Here the preacher is eager to hunt Harry before it reaches the cup. For this it is most likly to use Breadth First Search Algorithm. Here two lists are initialised . One is Visited that contains all the nodes that has already been visited and another is the queue which stores the nodes yet to visit.They are both appended after each movement.
 ### consideration
-Only the relative positions of cup and preacher wrt to Harry are taken here.
+The relative positions of cup and preacher wrt to Harry are taken here for avoiding unnecessary complications
 
