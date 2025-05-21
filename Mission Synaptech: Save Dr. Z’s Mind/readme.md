@@ -1,3 +1,4 @@
+``My solution code is Mission Synaptech: Save Dr. Z’s Mind/demo-solution.ipynb``
 # Cortical Microcircuit Simulation: Project Report
 ## Project Overview
 The model simulates a simplified cortical microcircuit using the Izhikevich neuron model in Brian2.<Br/> 
