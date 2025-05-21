@@ -11,9 +11,7 @@ def fix_multiline_jsonl(input_path, output_path):
             line = line.strip()
             if not line:#skip the empty lines
                 continue
-
             buffer += line + " "
-
             try:
                 #try to parse the current buffer
                 obj = json.loads(buffer)
@@ -22,19 +20,17 @@ def fix_multiline_jsonl(input_path, output_path):
                 buffer = ""  #clear buffer after success
             except json.JSONDecodeError:
                 continue  
-
         if buffer:
             try:
                 obj = json.loads(buffer)
                 outfile.write(json.dumps(obj) + "\n")
                 fixed_count += 1
             except json.JSONDecodeError as e:
-                print(f"⚠️ Final leftover block failed: {e}")
+                print(f"final leftover block failed: {e}")
                 error_count += 1
-
-    print(f"✅ Fixed: {fixed_count} entries written to {output_path}")
-    if error_count:
-        print(f"❌ {error_count} entries could not be fixed.")
-
+                """these 3 lines below are for debugging"""
+    # print(f"{fixed_count} entries has been written to {output_path}")
+    # if error_count:
+    #     print(f"{error_count} entries could not be been written.")
 #call the function
 fix_multiline_jsonl("/content/tool invocation.json", "/content/corrected.json")
