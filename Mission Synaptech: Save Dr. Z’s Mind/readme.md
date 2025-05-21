@@ -38,7 +38,7 @@ The referenced paper outlines a canonical cortical microcircuit with:
 | Leaky Integrate-and-Fire (LIF)|       1D       | Simplest spiking model              |
 | Izhikevich                    |       2D       | Optimal model                       |
 | Hodgkin-Huxley                |       4D       | Realistic and Biophysically detailed|
-## Comparison with of my model against Shepherd's desription
+## Comparison of my model against Shepherd's desription
 
 | Feature                 | Paper (Shepherd, 2011)                  | Our Simulation                          |
 |------------------------|-----------------------------------------|------------------------------------------|
